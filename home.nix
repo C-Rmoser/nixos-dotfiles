@@ -101,6 +101,8 @@
     };
   };
 
+  programs.zsh.syntaxHighlighting.enable = true;
+
   # Neovim
   programs.neovim = {
     enable = true;
