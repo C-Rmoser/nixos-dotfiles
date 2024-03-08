@@ -96,6 +96,7 @@
       theme = "robbyrussell";
       plugins = [
         "z"
+        "git"
       ];
     };
   };
