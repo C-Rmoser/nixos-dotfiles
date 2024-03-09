@@ -132,6 +132,11 @@
       type = "lua";
       config = "require('nvim-web-devicons').setup()";
     }
+    {
+      plugin = neoscroll-nvim;
+      type = "lua";
+      config = builtins.readFile(./nvim/plugin/_neoscroll-nvim.lua);
+    }
       nvim-treesitter.withAllGrammars
       plenary-nvim
       telescope-nvim
