@@ -76,6 +76,7 @@
       italic_font = "auto";
       bold_italic_font = "auto";
       enable_audio_bell = false; 
+      background_opacity = "0.8";
     };
   };
 
