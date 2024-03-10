@@ -121,7 +121,7 @@
 
     git
     wget
-    xclip
+    wl-clipboard
 
     waybar
     networkmanagerapplet
