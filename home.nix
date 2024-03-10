@@ -128,6 +128,11 @@
       config = "require('Comment').setup()";
     }
     {
+      plugin = gitsigns-nvim;
+      type = "lua";
+      config = "require('gitsigns').setup()";
+    }
+    {
       plugin = nvim-web-devicons;
       type = "lua";
       config = "require('nvim-web-devicons').setup()";
