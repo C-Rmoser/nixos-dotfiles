@@ -154,8 +154,9 @@
 
   wayland.windowManager.hyprland = {
     extraConfig = ''
+      exec-once=sleep 300
       exec-once=swww init
-      exec-once=sleep 1
+      exec-once=sleep 300
       exec-once=swww img ~/Wallpapers/gruv-stairs.jpg 
     '';
     settings = {
