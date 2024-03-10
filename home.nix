@@ -254,9 +254,14 @@
 
             network = {
               format = "{ifname}";
-              format-ethernet = "{ipaddr}/{cidr} 󰊗";
+              format-ethernet = "eth 󰊗";
               format-wifi = "{essid} ({signalStrength}%) ";
               format-disconnected = "";
+            };
+
+            clock = {
+              format = "{:%H.%M}";
+              tooltip-format = "{:%d.%m.%Y}";
             };
 
             wireplumber = {

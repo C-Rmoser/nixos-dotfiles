@@ -90,18 +90,15 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
+#bluetooth,
 #mpd {
-    padding: 0 10px;
+    padding: 0 12px;
     color: #ffffff;
 }
 
 #window,
 #workspaces {
     margin: 0 6px;
-}
-
-.modules-right > widget {
-    margin-right: 40px;
 }
 
 #clock {
