@@ -129,6 +129,7 @@
     dunst
 
     libnotify
+    wireplumber
   ];
   
   environment.sessionVariables = {

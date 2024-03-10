@@ -250,13 +250,22 @@
             ];
             modules-left = [ "wlr/taskbar" ];
             modules-center = [ "hyprland/workspaces" ];
-            modules-right = [ "battery" "bluetooth" "network" "cpu" "memory" "clock" ];
+            modules-right = [ "wireplumber" "battery" "bluetooth" "network" "cpu" "memory" "clock" ];
 
             network = {
               format = "{ifname}";
               format-ethernet = "{ipaddr}/{cidr} 󰊗";
               format-wifi = "{essid} ({signalStrength}%) ";
               format-disconnected = "";
+            };
+
+            wireplumber = {
+              format = "{volume}% {icon}";
+              format-icons = ["" "" ""];
+              format-muted = "";
+              on-click = "helvum";
+              max-volume = 150;
+              scroll-step = 1;
             };
 
             cpu = {
