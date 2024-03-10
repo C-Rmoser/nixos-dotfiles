@@ -154,7 +154,9 @@
 
   wayland.windowManager.hyprland = {
     extraConfig = ''
-      exec-once=swww init && swww img ~/Wallpapers/gruv-stairs.jpg
+      exec-once=swww init
+      exec-once=sleep 1
+      exec-once=swww img ~/Wallpapers/gruv-stairs.jpg 
     '';
     settings = {
       "$mod" = "SUPER";
