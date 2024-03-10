@@ -40,6 +40,7 @@
   # plain files is through 'home.file'.
   home.file = {
     ".config/hypr/hyprpaper.conf".source = ./hypr/hyprpaper.conf;
+    ".config/waybar/style.css".source = ./waybar/style.css;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
@@ -90,7 +91,7 @@
       nixrebuild = "sudo nixos-rebuild switch --flake ~/.dotfiles/";
       hconfig = "cd ~/.dotfiles && nvim ~/.dotfiles/home.nix";
       hrebuild = "home-manager switch --flake ~/.dotfiles/";
-      ll = "ls -l";
+      wbconfig = "cd ~/.dotfiles/waybar && nvim ~/.dotfiles/waybar/style.css";
     };
     oh-my-zsh = {
       enable = true;
@@ -154,13 +155,23 @@
 
   wayland.windowManager.hyprland = {
     extraConfig = ''
-      exec = hyprpaper
+      exec-once = hyprpaper
+      exec-once = waybar
+      exec-once=hyprctl dispatch workspace 1
     '';
     settings = {
       "$mod" = "SUPER";
+      workspace = [
+        "1,monitor:DP-2,default:true,persistent:true,name:yoloman"
+        "2,monitor:DP-2,persisten:true"
+        "3,monitor:DP-2,persisten:true"
+        "4,monitor:DP-2,persisten:true"
+        "5,monitor:DP-2,persisten:true"
+        "6,monitor:HDMI-A-2,default:true,persistent:true"
+      ];
       monitor = [
-        "HDMI-A-2,1920x1080@60,0x0, 1"
         "DP-2,3440x1440@100,1920x0, 1"
+        "HDMI-A-2,1920x1080@60,0x0, 1"
       ];
       general = {
         gaps_out = "10";
@@ -228,11 +239,68 @@
 
   programs.waybar = {
     enable = true;
-    # settings = {
-    # mainBar = {
-    #  layer = "top";
-    # };
-    # };
+      settings = {
+        mainBar = {
+            layer = "top";
+            position = "top";
+            height = 30;
+            output = [
+              "DP-2"
+              "HDMI-A-2"
+            ];
+            modules-left = [ "wlr/taskbar" ];
+            modules-center = [ "hyprland/workspaces" ];
+            modules-right = [ "battery" "bluetooth" "network" "cpu" "memory" "clock" ];
+
+            network = {
+              format = "{ifname}";
+              format-ethernet = "{ipaddr}/{cidr} 󰊗";
+              format-wifi = "{essid} ({signalStrength}%) ";
+              format-disconnected = "";
+            };
+
+            cpu = {
+              format = "{}% ";
+            };
+
+            memory = {
+              format = "{}% ";
+            };
+
+            bluetooth = {
+              format = "{num_connections} ";
+              format-disabled = "";
+              format-off = "";
+              interval = "30";
+              on-click = "blueman-manager";
+              format-no-controller = "";
+            };
+
+            "hyprland/workspaces" = {
+              format = "{icon}";
+              on-click = "activate";
+              format-icons = {
+                "1" = "";
+                "2" = "";
+                "3" = "";
+                "4" = "";
+                "5" = "";
+                "urgent" = "";
+                "default" = "";
+              };
+              "persistent-workspaces" = {
+                "0" = ["DP-2"];
+                "1" = ["DP-2"];
+                "2" = ["DP-2"];
+                "3" = ["DP-2"];
+                "4" = ["DP-2"];
+                "5" = ["DP-2"];
+                "6" = ["HDMI-A-2"];
+              };
+              sort-by-number = true;
+            };
+          };
+    };
   };
 
   # Let Home Manager install and manage itself.
