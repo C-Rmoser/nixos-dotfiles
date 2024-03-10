@@ -86,9 +86,9 @@
     enableAutosuggestions = true;
     enableCompletion = true;
     shellAliases = {
-      nixconfig = "nvim ~/.dotfiles/configuration.nix";
+      nixconfig = "cd ~/.dotfiles && nvim ~/.dotfiles/configuration.nix";
       nixrebuild = "sudo nixos-rebuild switch --flake ~/.dotfiles/";
-      hconfig = "nvim ~/.dotfiles/home.nix";
+      hconfig = "cd ~/.dotfiles && nvim ~/.dotfiles/home.nix";
       hrebuild = "home-manager switch --flake ~/.dotfiles/";
       ll = "ls -l";
     };
