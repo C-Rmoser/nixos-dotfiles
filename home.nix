@@ -39,11 +39,11 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
+    ".config/hypr/hyprpaper.conf".source = ./hypr/hyprpaper.conf;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
-
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose
@@ -154,10 +154,7 @@
 
   wayland.windowManager.hyprland = {
     extraConfig = ''
-      exec-once=sleep 300
-      exec-once=swww init
-      exec-once=sleep 300
-      exec-once=swww img ~/Wallpapers/gruv-stairs.jpg 
+      exec = hyprpaper
     '';
     settings = {
       "$mod" = "SUPER";
