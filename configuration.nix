@@ -114,7 +114,6 @@
 
 
   environment.systemPackages = with pkgs; [
-    brave
     vivaldi
     cinnamon.nemo
     rofi-wayland
