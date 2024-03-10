@@ -254,7 +254,7 @@
             ];
             modules-left = [ "wlr/taskbar" ];
             modules-center = [ "hyprland/workspaces" ];
-            modules-right = [ "custom/lang" "wireplumber" "battery" "bluetooth" "network" "cpu" "memory" "clock" ];
+            modules-right = [ "wireplumber" "battery" "bluetooth" "network" "cpu" "memory" "clock" ];
 
             network = {
               format = "{ifname}";
@@ -275,12 +275,6 @@
               on-click = "helvum";
               max-volume = 150;
               scroll-step = 1;
-            };
-
-            "custom/lang" = {
-              exec = "swaymsg -t get_inputs | grep layout_name | grep -v En | awk 'END{if(NR == 0){print \"EN\"}else{print toupper(substr($2,2,2))}}'";
-              interval = "1";
-              format = "{} ";
             };
 
             cpu = {
