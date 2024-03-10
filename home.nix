@@ -212,7 +212,7 @@
 
           # Additional keybinds
           "$mod, Q, exec, kitty"
-          "$mod, B, exec, brave"
+          "$mod, B, exec, vivaldi"
           "$mod, C, killactive"
           "$mod, M, exit"
           "$mod, T, togglesplit"
