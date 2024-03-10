@@ -161,6 +161,10 @@
     '';
     settings = {
       "$mod" = "SUPER";
+      input = {
+        kb_layout = "us,de";
+        kb_options = "grp:win_space_toggle";
+      };
       workspace = [
         "1,monitor:DP-2,default:true,persistent:true,name:yoloman"
         "2,monitor:DP-2,persisten:true"

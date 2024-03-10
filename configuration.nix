@@ -48,7 +48,7 @@
     enable = true;
     displayManager.sddm.enable = true;
     displayManager.sddm.wayland.enable = true;
-    layout = "us";
+    # layout = "us,de";
     xkbVariant = "";
 
     videoDrivers = ["nvidia"];
