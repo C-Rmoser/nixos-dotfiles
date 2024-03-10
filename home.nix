@@ -129,6 +129,16 @@
       config = "require('Comment').setup()";
     }
     {
+      plugin = nvim-surround;
+      type = "lua";
+      config = "require('nvim-surround').setup()";
+    }
+    {
+      plugin = comment-nvim;
+      type = "lua";
+      config = "require('Comment').setup()";
+    }
+    {
       plugin = gitsigns-nvim;
       type = "lua";
       config = "require('gitsigns').setup()";
