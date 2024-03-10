@@ -117,11 +117,10 @@
     vivaldi
     cinnamon.nemo
     rofi-wayland
+    hyprpaper
 
     git
     wget
-
-    swww
 
     waybar
     networkmanagerapplet
