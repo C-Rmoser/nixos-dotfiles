@@ -45,11 +45,6 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", '<Esc>', ':noh <CR>')
 vim.keymap.set("n", '<Esc>', '<Esc> :noh <CR>')
 
--- since we are using cutlass use S as cut key
-vim.keymap.set("n", "s", "d")
-vim.keymap.set("v", "s", "d")
-vim.keymap.set("n", "ss", "dd")
-vim.keymap.set("n", "S", "D")
 
 vim.keymap.set("n", "<leader>wt", "<C-6>")
 vim.keymap.set("n", "<leader>ww", "<cmd>:Bdelete<CR>")
@@ -63,3 +58,18 @@ vim.keymap.set("v", "Y", "myY`y")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 vim.keymap.set("n", "<leader>gp", "<cmd>NvimTreeFindFile<CR>")
+
+-- Delete into black hole register per default
+vim.keymap.set("n", "d", "\"_d")
+vim.keymap.set("n", "dd", "\"_dd")
+vim.keymap.set("n", "D", "\"_D")
+vim.keymap.set("n", "c", "\"_c")
+vim.keymap.set("n", "cc", "\"_cc")
+vim.keymap.set("n", "C", "\"_C")
+vim.keymap.set("n", "x", "\"_x")
+vim.keymap.set("n", "X", "\"_X")
+-- and use s key to cut instead
+vim.keymap.set("n", "s", "d")
+vim.keymap.set("v", "s", "d")
+vim.keymap.set("n", "ss", "dd")
+vim.keymap.set("n", "S", "D")
