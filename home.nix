@@ -175,7 +175,15 @@
         kb_options = "grp:win_space_toggle";
       };
       workspace = [
-        "1,monitor:DP-2,default:true,persistent:true,name:yoloman"
+        # DP-1
+        "1,monitor:DP-1,default:true,persistent:true"
+        "2,monitor:DP-1,persisten:true"
+        "3,monitor:DP-1,persisten:true"
+        "4,monitor:DP-1,persisten:true"
+        "5,monitor:DP-1,persisten:true"
+
+        # DP-2
+        "1,monitor:DP-2,default:true,persistent:true"
         "2,monitor:DP-2,persisten:true"
         "3,monitor:DP-2,persisten:true"
         "4,monitor:DP-2,persisten:true"
@@ -183,6 +191,7 @@
         "6,monitor:HDMI-A-2,default:true,persistent:true"
       ];
       monitor = [
+        "DP-1,2560x1440@75,1920x0, 1"
         "DP-2,3440x1440@100,1920x0, 1"
         "HDMI-A-2,1920x1080@60,0x0, 1"
       ];
@@ -258,6 +267,7 @@
             position = "top";
             height = 30;
             output = [
+              "DP-1"
               "DP-2"
               "HDMI-A-2"
             ];
