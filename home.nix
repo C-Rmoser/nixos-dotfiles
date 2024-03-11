@@ -163,6 +163,11 @@
       type = "lua";
       config = builtins.readFile(./nvim/plugin/_telescope.lua);
     }
+    {
+      plugin = nvim-tree-lua;
+      type = "lua";
+      config = builtins.readFile(./nvim/plugin/_nvim-tree.lua);
+    }
       telescope-ui-select-nvim
       nvim-treesitter.withAllGrammars
       plenary-nvim
