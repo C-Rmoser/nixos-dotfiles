@@ -93,6 +93,7 @@
       hconfig = "cd ~/.dotfiles && nvim ~/.dotfiles/home.nix";
       hrebuild = "home-manager switch --flake ~/.dotfiles/";
       wbconfig = "cd ~/.dotfiles/waybar && nvim ~/.dotfiles/waybar/style.css";
+      nvimconfig = "cd ~/.dotfiles/nvim && nvim ~/.dotfiles/nvim/remap.lua";
     };
     oh-my-zsh = {
       enable = true;
