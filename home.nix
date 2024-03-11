@@ -104,6 +104,11 @@
     };
   };
 
+  # Ripgrep
+  programs.ripgrep = {
+    enable = true;
+  };
+
   # Neovim
   programs.neovim = {
     enable = true;
