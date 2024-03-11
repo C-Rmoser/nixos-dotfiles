@@ -5,15 +5,12 @@ local lsp = require('lsp-zero').preset({
     suggest_lsp_servers = false,
 })
 
-lsp.ensure_installed({
-    'lua_ls',
-    'rust_analyzer',
-    'cssls',
-})
-
-local lspconfig = require('lspconfig')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+lsp.configure('rust-analyzer');
+
+lsp.configure('nixd');
 
 -- Fix Undefined global 'vim'
 lsp.configure('lua_ls', {
@@ -84,7 +81,7 @@ local kind_icons = {
     TypeParameter = ""
 }
 
-lsp.setup_nvim_cmp({
+cmp.setup({
     sources = {
         { name = 'nvim_lsp', keyword_length = 1, max_item_count = 15 },
         { name = 'luasnip',  keyword_length = 2, max_item_count = 3 },

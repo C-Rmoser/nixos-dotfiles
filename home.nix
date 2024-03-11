@@ -118,6 +118,24 @@
     vimAlias = true;
     vimdiffAlias = true;
     plugins = with pkgs.vimPlugins; [
+    # Lsp Zero
+    {
+      plugin = lsp-zero-nvim;
+      type = "lua";
+      config = builtins.readFile(./nvim/plugin/_lsp.lua);
+    }
+    {
+      plugin = nvim-lspconfig;
+    }
+    {
+      plugin = nvim-cmp;
+    }
+    {
+      plugin = cmp-nvim-lsp;
+    }
+    {
+      plugin = luasnip;
+    }
     {
       plugin = gruvbox-material;
       type = "lua";
