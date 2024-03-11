@@ -86,6 +86,7 @@
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
+    syntaxHighlighting.enable = true;
     shellAliases = {
       nixconfig = "cd ~/.dotfiles && nvim ~/.dotfiles/configuration.nix";
       nixrebuild = "sudo nixos-rebuild switch --flake ~/.dotfiles/";
@@ -102,8 +103,6 @@
       ];
     };
   };
-
-  programs.zsh.syntaxHighlighting.enable = true;
 
   # Neovim
   programs.neovim = {
@@ -167,7 +166,7 @@
     extraConfig = ''
       exec-once = hyprpaper
       exec-once = waybar
-      exec-once=hyprctl dispatch workspace 1
+      exec-once = hyprctl dispatch workspace 1
     '';
     settings = {
       "$mod" = "SUPER";
