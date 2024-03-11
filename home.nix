@@ -152,9 +152,14 @@
       type = "lua";
       config = builtins.readFile(./nvim/plugin/_neoscroll-nvim.lua);
     }
+    {
+      plugin = telescope-nvim;
+      type = "lua";
+      config = builtins.readFile(./nvim/plugin/_telescope.lua);
+    }
+      telescope-ui-select-nvim
       nvim-treesitter.withAllGrammars
       plenary-nvim
-      telescope-nvim
     ];
     extraLuaConfig = ''
       ${builtins.readFile ./nvim/set.lua}
@@ -177,17 +182,17 @@
       workspace = [
         # DP-1
         "1,monitor:DP-1,default:true,persistent:true"
-        "2,monitor:DP-1,persisten:true"
-        "3,monitor:DP-1,persisten:true"
-        "4,monitor:DP-1,persisten:true"
-        "5,monitor:DP-1,persisten:true"
+        "2,monitor:DP-1,persistent:true"
+        "3,monitor:DP-1,persistent:true"
+        "4,monitor:DP-1,persistent:true"
+        "5,monitor:DP-1,persistent:true"
 
         # DP-2
         "1,monitor:DP-2,default:true,persistent:true"
-        "2,monitor:DP-2,persisten:true"
-        "3,monitor:DP-2,persisten:true"
-        "4,monitor:DP-2,persisten:true"
-        "5,monitor:DP-2,persisten:true"
+        "2,monitor:DP-2,persistent:true"
+        "3,monitor:DP-2,persistent:true"
+        "4,monitor:DP-2,persistent:true"
+        "5,monitor:DP-2,persistent:true"
         "6,monitor:HDMI-A-2,default:true,persistent:true"
       ];
       monitor = [
