@@ -129,6 +129,11 @@
       config = builtins.readFile(./nvim/plugin/_bufferline-nvim.lua);
     }
     {
+      plugin = lualine-nvim;
+      type = "lua";
+      config = "require('lualine').setup()";
+    }
+    {
       plugin = comment-nvim;
       type = "lua";
       config = "require('Comment').setup()";
