@@ -136,7 +136,6 @@
     # Language servers
     lua-language-server
     nixd
-    rust-analyzer
   ];
   
   environment.sessionVariables = {
