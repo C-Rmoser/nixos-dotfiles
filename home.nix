@@ -291,6 +291,7 @@
           "$mod, S, exec, rofi -show drun -show-icons"
           "$mod, F, fullscreen"
           "$mod, T, swapnext"
+          "$mod SHIFT, L, exec, wlogout"
         ];
         bindm = [
           # Move/resize windows with mainMod + LMB/RMB and dragging
@@ -379,6 +380,10 @@
             };
           };
     };
+  };
+
+  programs.wlogout = {
+    enable = true;
   };
 
   # Let Home Manager install and manage itself.
