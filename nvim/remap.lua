@@ -47,7 +47,8 @@ vim.keymap.set("n", '<Esc>', '<Esc> :noh <CR>')
 
 
 vim.keymap.set("n", "<leader>wt", "<C-6>")
-vim.keymap.set("n", "<leader>ww", "<cmd>:Bdelete<CR>")
+vim.keymap.set("n", "<leader>ww", "<cmd>:bd<CR>")
+vim.keymap.set("n", "<leader>wa", "<cmd>:BufferlineCloseOthers<CR>")
 vim.keymap.set("n", "<leader>b", ":b ")
 
 -- Maintain the cursor position when yanking a visual selection
