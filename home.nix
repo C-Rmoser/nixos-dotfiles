@@ -287,8 +287,10 @@
           "$mod, B, exec, vivaldi"
           "$mod, C, killactive"
           "$mod, M, exit"
-          "$mod, T, togglesplit"
+          "$mod, V, togglesplit"
           "$mod, S, exec, rofi -show drun -show-icons"
+          "$mod, F, fullscreen"
+          "$mod, T, swapnext"
         ];
         bindm = [
           # Move/resize windows with mainMod + LMB/RMB and dragging
