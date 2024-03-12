@@ -130,6 +130,7 @@
     libnotify
     wireplumber
 
+    gcc
     rustup
 
     # Language servers
