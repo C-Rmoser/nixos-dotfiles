@@ -8,7 +8,7 @@ local lsp = require('lsp-zero').preset({
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-lsp.configure('rust-analyzer');
+lsp.configure('rust_analyzer');
 
 lsp.configure('nixd');
 
