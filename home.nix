@@ -315,7 +315,7 @@
             ];
             modules-left = [ "wlr/taskbar" ];
             modules-center = [ "hyprland/workspaces" ];
-            modules-right = [ "wireplumber" "battery" "bluetooth" "network" "cpu" "memory" "clock" ];
+            modules-right = [ "wireplumber" "battery" "bluetooth" "network" "cpu" "memory" "clock" "custom/power" ];
 
             network = {
               format = "{ifname}";
@@ -353,6 +353,12 @@
               interval = "30";
               on-click = "blueman-manager";
               format-no-controller = "";
+            };
+
+            "custom/power" = {
+                format = "⏻";
+                tooltip = false;
+                on-click = "wlogout --protocol layer-shell";
             };
 
             "hyprland/workspaces" = {

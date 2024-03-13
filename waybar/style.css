@@ -82,10 +82,14 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #bluetooth,
-#custom-lang,
+#custom-power,
 #mpd {
-    padding: 0 12px;
+    padding: 0 20px 0 0;
     color: #ffffff;
+}
+
+#custom-power {
+  padding-right: 25px;
 }
 
 #window,
