@@ -57,7 +57,7 @@
   users.users.chris = {
     isNormalUser = true;
     description = "Christoph Rohrmoser";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = with pkgs; [];
   };
 
@@ -99,6 +99,14 @@
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
+  virtualisation.docker = {
+    enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
 
   programs.neovim = {
     enable = true;
