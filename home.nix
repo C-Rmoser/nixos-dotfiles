@@ -458,27 +458,27 @@
       }
 
       #lock {
-        background-image: url("${config.home.homeDirectory}/nixos/assets/wlogout/lock_light.png");
+        background-image: url("${config.home.homeDirectory}/nixos/assets/wlogout/lock.png");
       }
       
       #hibernate {
-        background-image: url("${config.home.homeDirectory}/nixos/assets/wlogout/hibernate_light.png");
+        background-image: url("${config.home.homeDirectory}/nixos/assets/wlogout/hibernate.png");
       }
 
       #logout {
-        background-image: url("${config.home.homeDirectory}/nixos/assets/wlogout/logout_light.png");
+        background-image: url("${config.home.homeDirectory}/nixos/assets/wlogout/logout.png");
       }
 
       #shutdown {
-        background-image: url("${config.home.homeDirectory}/nixos/assets/wlogout/shutdown_light.png");
+        background-image: url("${config.home.homeDirectory}/nixos/assets/wlogout/shutdown.png");
       }
 
       #suspend {
-        background-image: url("${config.home.homeDirectory}/nixos/assets/wlogout/suspend_light.png");
+        background-image: url("${config.home.homeDirectory}/nixos/assets/wlogout/suspend.png");
       }
       
       #reboot {
-        background-image: url("${config.home.homeDirectory}/nixos/assets/wlogout/reboot_light.png");
+        background-image: url("${config.home.homeDirectory}/nixos/assets/wlogout/reboot.png");
       }
     '';
   };
