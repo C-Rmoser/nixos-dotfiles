@@ -41,7 +41,8 @@
   home.file = {
     ".config/hypr/hyprpaper.conf".source = ./hypr/hyprpaper.conf;
     ".config/waybar/style.css".source = ./waybar/style.css;
-    "nixos/assets/".source = ./assets;
+    "nixos/assets".source = ./assets;
+    # "nixos/assets/wlogout".source = ./assets/wlogout;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
@@ -432,6 +433,11 @@
     ];
 
     style = ''
+      * {
+        background-image: none;
+        box-shadow: none;
+      }
+
       window {
         background-color: rgba(22, 22, 22, 0.8);
       }
@@ -441,8 +447,10 @@
         background-position: center;
         background-size: 25%;
         background-color: rgba(22, 22, 22, 0.8);
-        color: white;
         margin: 20;
+        border: 1px solid #45707a;
+        color: #d4be98;
+        text-decoration-color: red;
       }
 
       button:focus {
@@ -450,27 +458,27 @@
       }
 
       #lock {
-        background-image: url("${pkgs.wlogout}/share/wlogout/icons/lock.png");
+        background-image: url("${config.home.homeDirectory}/nixos/assets/wlogout/lock_light.png");
       }
       
       #hibernate {
-        background-image: url("${pkgs.wlogout}/share/wlogout/icons/hibernate.png");
+        background-image: url("${config.home.homeDirectory}/nixos/assets/wlogout/hibernate_light.png");
       }
 
       #logout {
-        background-image: url("${pkgs.wlogout}/share/wlogout/icons/logout.png");
+        background-image: url("${config.home.homeDirectory}/nixos/assets/wlogout/logout_light.png");
       }
 
       #shutdown {
-        background-image: url("${pkgs.wlogout}/share/wlogout/icons/shutdown.png");
+        background-image: url("${config.home.homeDirectory}/nixos/assets/wlogout/shutdown_light.png");
       }
 
       #suspend {
-        background-image: url("${pkgs.wlogout}/share/wlogout/icons/suspend.png");
+        background-image: url("${config.home.homeDirectory}/nixos/assets/wlogout/suspend_light.png");
       }
       
       #reboot {
-        background-image: url("${pkgs.wlogout}/share/wlogout/icons/reboot.png");
+        background-image: url("${config.home.homeDirectory}/nixos/assets/wlogout/reboot_light.png");
       }
     '';
   };
