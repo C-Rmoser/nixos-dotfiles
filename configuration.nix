@@ -114,6 +114,8 @@
 
   environment.systemPackages = with pkgs; [
     vivaldi
+    gimp
+
     cinnamon.nemo
     rofi-wayland
     hyprpaper
