@@ -446,7 +446,7 @@
       }
 
       button:focus {
-        background-color: #faca52;
+        background-color: #45707a;
       }
 
       #lock {
