@@ -41,6 +41,7 @@
   home.file = {
     ".config/hypr/hyprpaper.conf".source = ./hypr/hyprpaper.conf;
     ".config/waybar/style.css".source = ./waybar/style.css;
+    "nixos/assets/".source = ./assets;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
@@ -390,6 +391,88 @@
 
   programs.wlogout = {
     enable = true;
+
+    layout = [
+      {
+        label = "lock";
+        action = "loginctl lock-session";
+        text = "Lock";
+        keybind = "l";
+      }
+      {
+        label = "hibernate";
+        action = "systemctl hibernate";
+        text = "Hibernate";
+        keybind = "h";
+      }
+      {
+        label = "logout";
+        action = "sleep 1; hyprctl dispatch exit";
+        text = "Logout";
+        keybind = "e";
+      }
+      {
+        label = "shutdown";
+        action = "systemctl poweroff";
+        text = "Shutdown";
+        keybind = "s";
+      }
+      {
+        label = "suspend";
+        action = "systemctl suspend";
+        text = "Suspend";
+        keybind = "u";
+      }
+      {
+        label = "reboot";
+        action = "systemctl reboot";
+        text = "Reboot";
+        keybind = "r";
+      }
+    ];
+
+    style = ''
+      window {
+        background-color: rgba(22, 22, 22, 0.8);
+      }
+
+      button {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 25%;
+        background-color: rgba(22, 22, 22, 0.8);
+        color: white;
+        margin: 20;
+      }
+
+      button:focus {
+        background-color: #faca52;
+      }
+
+      #lock {
+        background-image: url("${pkgs.wlogout}/share/wlogout/icons/lock.png");
+      }
+      
+      #hibernate {
+        background-image: url("${pkgs.wlogout}/share/wlogout/icons/hibernate.png");
+      }
+
+      #logout {
+        background-image: url("${pkgs.wlogout}/share/wlogout/icons/logout.png");
+      }
+
+      #shutdown {
+        background-image: url("${pkgs.wlogout}/share/wlogout/icons/shutdown.png");
+      }
+
+      #suspend {
+        background-image: url("${pkgs.wlogout}/share/wlogout/icons/suspend.png");
+      }
+      
+      #reboot {
+        background-image: url("${pkgs.wlogout}/share/wlogout/icons/reboot.png");
+      }
+    '';
   };
 
   # Let Home Manager install and manage itself.
