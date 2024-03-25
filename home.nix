@@ -121,19 +121,8 @@
       tmuxPlugins.vim-tmux-navigator
     ];
     extraConfig = ''
-      set-option -g status-position top
-
-      set -g status-bg "#343F44"
-      set -g status-fg white
-
-      set -g status-position top
-      set -g status-justify left
-      set -g status-style 'bg=colour18 fg=white'
-      set -g status-left ' '
-      set -g status-right '#[fg=#3D484D,bg=#343F44]#[fg=white,bg=#3D484D] %d/%m #[fg=#83C092,bg=#3D484D]#[fg=#2D353B,bg=#83C092] %H:%M:%S '
-      set -g status-right-length 50
-      set -g status-left-length 20
-
+      set -g status off
+    
       bind -n M-h select-pane -L
       bind -n M-l select-pane -R
       bind -n M-k select-pane -U
