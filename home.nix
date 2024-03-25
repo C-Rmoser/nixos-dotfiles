@@ -105,6 +105,45 @@
         "git"
       ];
     };
+    initExtra = ''
+      if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+        exec tmux new-session -A -s default
+      fi
+    '';
+  };
+
+  # Tmux
+  programs.tmux = {
+    enable = true;
+    prefix = "C-Space";
+    baseIndex = 1;
+    plugins = with pkgs; [
+      tmuxPlugins.vim-tmux-navigator
+    ];
+    extraConfig = ''
+      set-option -g status-position top
+
+      set -g status-bg "#343F44"
+      set -g status-fg white
+
+      set -g status-position top
+      set -g status-justify left
+      set -g status-style 'bg=colour18 fg=white'
+      set -g status-left ' '
+      set -g status-right '#[fg=#3D484D,bg=#343F44]#[fg=white,bg=#3D484D] %d/%m #[fg=#83C092,bg=#3D484D]#[fg=#2D353B,bg=#83C092] %H:%M:%S '
+      set -g status-right-length 50
+      set -g status-left-length 20
+
+      bind -n M-h select-pane -L
+      bind -n M-l select-pane -R
+      bind -n M-k select-pane -U
+      bind -n M-j select-pane -D
+
+      bind-key h split-window -v -c "#{pane_current_path}"
+      bind-key v split-window -h -c "#{pane_current_path}"
+
+      bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded."
+    '';
   };
 
   # Ripgrep
@@ -137,6 +176,9 @@
     }
     {
       plugin = luasnip;
+    }
+    {
+      plugin = tmux-navigator;
     }
     {
       plugin = gruvbox-material;
