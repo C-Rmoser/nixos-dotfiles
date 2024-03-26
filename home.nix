@@ -226,6 +226,11 @@
       type = "lua";
       config = builtins.readFile(./nvim/plugin/_nvim-tree.lua);
     }
+    {
+      plugin = telekasten-nvim;
+      type = "lua";
+      config = builtins.readFile(./nvim/plugin/_telekasten-nvim.lua);
+    }
       telescope-ui-select-nvim
       nvim-treesitter.withAllGrammars
       plenary-nvim
