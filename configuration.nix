@@ -142,6 +142,7 @@
 
     gcc
     rustup
+    postgresql
 
     # Language servers
     lua-language-server
