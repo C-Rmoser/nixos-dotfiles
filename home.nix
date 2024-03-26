@@ -122,6 +122,7 @@
     ];
     extraConfig = ''
       set -g status off
+      set -sg escape-time 0
     
       bind -n M-h select-pane -L
       bind -n M-l select-pane -R
