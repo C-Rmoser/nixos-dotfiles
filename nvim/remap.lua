@@ -43,8 +43,7 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 
 -- Clear search highlights on Esc
 vim.keymap.set("n", '<Esc>', ':noh <CR>')
-vim.keymap.set("n", '<Esc>', '<Esc> :noh <CR>')
-
+vim.keymap.set("i", '<Esc>', '<Esc> :noh <CR>')
 
 vim.keymap.set("n", "<leader>wt", "<C-6>")
 vim.keymap.set("n", "<leader>ww", "<cmd>:bd<CR>")
