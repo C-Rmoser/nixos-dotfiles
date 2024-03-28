@@ -232,7 +232,11 @@
       config = builtins.readFile(./nvim/plugin/_telekasten-nvim.lua);
     }
       telescope-ui-select-nvim
-      nvim-treesitter.withAllGrammars
+    {
+      plugin = nvim-treesitter.withAllGrammars;
+      type = "lua";
+      config = builtins.readFile(./nvim/plugin/_treesitter.lua);
+    }
       plenary-nvim
     ];
     extraLuaConfig = ''
