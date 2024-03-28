@@ -147,6 +147,12 @@
     # Language servers
     lua-language-server
     nixd
+
+    # js
+    nodejs_21
+
+    pkgs.nodePackages.typescript-language-server
+    pkgs.nodePackages.svelte-language-server
   ];
   
   environment.sessionVariables = {

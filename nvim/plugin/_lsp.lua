@@ -23,6 +23,16 @@ lsp.configure('lua_ls', {
     }
 })
 
+lsp.configure()
+
+require'lspconfig'.tsserver.setup {
+    on_attach = function(client)
+        client.resolved_capabilities.document_formatting = false
+    end,
+}
+
+require'lspconfig'.svelte.setup{}
+
 lsp.configure('cssls', {
     filetypes = { 'css', 'scss', 'sass', 'less' }
 })
