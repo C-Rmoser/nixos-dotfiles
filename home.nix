@@ -116,12 +116,14 @@
   # Tmux
   programs.tmux = {
     enable = true;
+    terminal = "tmux-256color";
     prefix = "C-Space";
     baseIndex = 1;
     plugins = with pkgs; [
       tmuxPlugins.vim-tmux-navigator
     ];
     extraConfig = ''
+      set-option -sa terminal-features ',xterm-kitty:RGB'
       set -g status off
       set -sg escape-time 0
     
