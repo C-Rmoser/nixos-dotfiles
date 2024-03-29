@@ -124,7 +124,19 @@
     ];
     extraConfig = ''
       set-option -sa terminal-features ',xterm-kitty:RGB'
-      set -g status off
+
+      set -g status on
+      set -g status-position top
+      set-option -g status-style bg=default
+
+      setw -g window-status-style 'fg=white bg=default'
+      setw -g window-status-format ' #I#[fg=white]:#[fg=white]#W '
+      setw -g window-status-current-style 'fg=#302d28 bg=#A7C080 bold'
+      setw -g window-status-current-format ' #I#[fg=default]:#[fg=default]#W #[fg=#A7C080,bg=#302d28] '
+
+      set -g status-right ""
+      set -g status-left ""
+
       set -sg escape-time 0
     
       bind -n M-h select-pane -L
