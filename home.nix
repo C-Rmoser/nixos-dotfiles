@@ -261,6 +261,7 @@
 
   wayland.windowManager.hyprland = {
     extraConfig = ''
+      exec-once = tmux setenv -g HYPRLAND_INSTANCE_SIGNATURE "$HYPRLAND_INSTANCE_SIGNATURE"
       exec-once = hyprpaper
       exec-once = waybar
       exec-once = hyprctl dispatch workspace 1
