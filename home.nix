@@ -106,9 +106,9 @@
       ];
     };
     initExtra = ''
-      if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-        exec tmux new-session -A -s default
-      fi
+      # if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+      #   exec tmux new-session -A -s default
+      # fi
       export PATH="$HOME/.cargo/bin:$PATH"
     '';
   };
@@ -261,7 +261,6 @@
 
   wayland.windowManager.hyprland = {
     extraConfig = ''
-      exec-once = tmux setenv -g HYPRLAND_INSTANCE_SIGNATURE "$HYPRLAND_INSTANCE_SIGNATURE"
       exec-once = hyprpaper
       exec-once = waybar
       exec-once = hyprctl dispatch workspace 1
