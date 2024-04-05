@@ -132,6 +132,7 @@
     wget
     wl-clipboard
     gnumake
+    unzip
 
     waybar
     networkmanagerapplet
