@@ -153,6 +153,10 @@
     lua-language-server
     nixd
 
+    # Java
+    jdk17
+    maven
+
     # js
     nodejs_21
 
