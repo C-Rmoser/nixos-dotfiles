@@ -145,6 +145,9 @@
     rustup
     postgresql
 
+    # IDEs
+    jetbrains.idea-ultimate
+
     # Language servers
     lua-language-server
     nixd
