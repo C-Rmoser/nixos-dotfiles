@@ -1,0 +1,175 @@
+""" Map leader to space ---------------------
+let mapleader=" "
+
+""" Plugins  --------------------------------
+set surround
+set multiple-cursors
+set NERDTree
+" set ReplaceWithRegister
+set vim-paragraph-motion
+set highlightedyank
+set commentary
+set textobj-entire
+
+""" Plugin settings -------------------------
+let g:argtextobj_pairs="[:],(:),<:>"
+let g:highlightedyank_highlight_color = "rgba(200, 220, 240, 155)"
+
+""" Common settings -------------------------
+set showmode
+set so=5
+set incsearch
+set nu
+set clipboard+=unnamedplus
+set ignorecase                          " Ignore case when searching in file
+set smartcase                           " Case sensitive search when using uppercase letters
+set nohlsearch                          " Don't leave results highlighted after pressing enter
+set visualbell
+set relativenumber
+set number 
+set scrolloff=8
+
+""" Idea specific settings ------------------
+set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
+set idearefactormode=select
+
+nmap n nzz
+nmap N Nzz
+
+" Keep cursor where it is when concatenate lines
+nnoremap J mzJ`z
+
+imap jk <Esc>
+nmap Y y$
+
+map <leader>sm :source ~/_ideavimrc<CR> 
+" nmap <C-o> :action JumpToLastChange <CR>
+" nmap <C-i> :action JumpToNextChange <CR>
+
+nnoremap gcc :action CommentByLineComment<CR>
+vnoremap gc :action CommentByLineComment<CR>
+
+nmap <leader>dd <Action>(Debug)
+nmap <leader>drc <Action>(RunToCursor)
+nmap <leader>dc <Action>(Resume)
+nmap <leader>dx <Action>(EvaluateExpression)
+vmap <leader>dx <Action>(EvaluateExpression)
+
+nmap <leader>ds <Action>(Stop)
+nmap <leader>dnr <Action>(Run)
+nmap <leader>dnb <Action>(BuildButton)
+nmap <leader>ds <Action>(Stop)
+nmap <leader>db <Action>(ToggleLineBreakpoint)
+nmap <leader>c <Action>(ShowIntentionActions)
+
+nmap <leader>gd <Action>(GoToDeclaration)
+nmap <leader>rp <Action>(Javascript.Linters.EsLint.Fix)
+
+" Bookmarks
+nmap <leader>dm <Action>(ToggleBookmark)
+nnoremap ma mA
+nnoremap 'a 'A
+nnoremap ms mS
+nnoremap 's 'S
+nnoremap md mD
+nnoremap 'd 'D
+nnoremap mf mF
+nnoremap 'f 'F
+
+nmap <c-p> <Action>(GotoFile)
+nmap <leader>fg <Action>(FindInPath)
+nmap <leader>wt <C-6>
+nmap <leader>ff <Action>(FileStructurePopup)
+nmap <leader>fo <Action>(RecentLocations)
+nmap <leader>fl <Action>(RecentFiles)
+
+nmap <leader>rn <Action>(RenameElement)
+nmap <leader>rc <Action>(ReformatCode)
+nmap K <Action>(QuickJavaDoc)
+
+nmap <leader>e <Action>(ActivateProjectToolWindow)
+
+" Tabs
+nmap <leader>wa <Action>(CloseAllEditorsButActive)
+nmap <leader>ww <Action>(CloseEditor)
+nmap <leader>wc <Action>(HideAllWindows)
+
+" Go to next / previous tab
+nmap <leader>. <Action>(NextTab)
+nmap <leader>, <Action>(PreviousTab)
+nmap <leader>< :tabm-1<CR>
+nmap <leader>> :tabm+1<CR>
+" Jump to tab by number
+nmap <leader>1 <Action>(GoToTab1)
+nmap <leader>2 <Action>(GoToTab2)
+nmap <leader>3 <Action>(GoToTab3)
+nmap <leader>4 <Action>(GoToTab4)
+nmap <leader>5 <Action>(GoToTab5)
+nmap <leader>6 <Action>(GoToTab6)
+nmap <leader>7 <Action>(GoToTab7)
+nmap <leader>8 <Action>(GoToTab8)
+nmap <leader>9 <Action>(GoToTab9)
+
+" Yank into black hole register by default
+nnoremap x "_x
+nnoremap d "_d
+nnoremap dd "_dd
+nnoremap D "_D
+vnoremap d "_d
+nnoremap c "_c
+vnoremap c "_c
+" Change s to delete command
+nnoremap s d
+vnoremap s d
+nnoremap ss dd
+nnoremap S D
+vnoremap p "_dP
+
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+
+nnoremap <leader>rt :action Refactorings.QuickListPopupAction<CR>
+nnoremap <leader>ri :action ExtractInterface<CR>
+nnoremap <leader>p <Esc>l:action PasteMultiple<CR>
+nnoremap <leader>ge :action Generate<CR>
+
+nnoremap <c-w>v :action SplitVertically<CR>
+nnoremap <c-w>s :action SplitHorizontally<CR>
+nnoremap <c-w>u :action Unsplit<CR>
+
+nnoremap [[ :action MethodUp<CR>
+nnoremap ]] :action MethodDown<CR>
+
+nnoremap zc :action CollapseRegion<CR>
+nnoremap zo :action ExpandRegion<CR>
+nnoremap <leader>zc :action CollapseAllRegions<CR>
+nnoremap <leader>zo :action ExpandAllRegions<CR>
+
+nnoremap <leader>rr :action Refactorings.QuickListPopupAction<CR>
+nnoremap <leader>ro :action OptimizeImports<CR>
+
+nnoremap <leader>ta :action RunClass<CR>
+nnoremap <leader>tf :action RerunFailedTests<CR>
+nnoremap <leader>tl :action Rerun<CR>
+
+nnoremap <leader>l :action RecentLocations<CR>
+nnoremap <leader>gi :action GotoImplementation<CR>
+nnoremap <leader>gd :action GotoDeclaration<CR>
+nnoremap <leader>gr :action FindUsages<CR>
+nnoremap <leader>gt :action GotoTest<CR>
+nnoremap <leader>gc :action GotoClass<CR>
+nnoremap <leader>fs :action FileStructurePopup<CR>
+nnoremap <leader>gq :action QuickImplementations<CR>
+
+nnoremap <leader>gp :action SelectInProjectView<CR>
+nnoremap <leader>wr :action ActivateRunToolWindow<CR>
+nnoremap <leader>ns :action NewScratchFile<CR>
+
+nnoremap ge :action GotoNextError<CR>
+nnoremap gE :action GotoPreviousError<CR>
+
+nnoremap <leader>fm :action ToggleDistractionFreeMode<CR>

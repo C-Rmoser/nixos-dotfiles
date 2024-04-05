@@ -42,6 +42,7 @@
     ".config/hypr/hyprpaper.conf".source = ./hypr/hyprpaper.conf;
     ".config/waybar/style.css".source = ./waybar/style.css;
     "nixos/assets".source = ./assets;
+    "_ideavimrc".source = ./intellij/_ideavimrc;
     # "nixos/assets/wlogout".source = ./assets/wlogout;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
