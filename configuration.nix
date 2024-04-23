@@ -121,7 +121,7 @@
 
 
   environment.systemPackages = with pkgs; [
-    vivaldi
+    firefox
     gimp
 
     cinnamon.nemo
