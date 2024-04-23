@@ -134,6 +134,7 @@
     gnumake
     unzip
     tree
+    killall
 
     waybar
     networkmanagerapplet
