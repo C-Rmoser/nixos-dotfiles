@@ -133,6 +133,7 @@
     wl-clipboard
     gnumake
     unzip
+    tree
 
     waybar
     networkmanagerapplet
