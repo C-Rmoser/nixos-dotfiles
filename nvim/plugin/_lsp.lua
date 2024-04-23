@@ -98,10 +98,10 @@ local luasnip = require('luasnip')
 
 cmp.setup({
     sources = {
-        { name = 'nvim_lsp', keyword_length = 1, max_item_count = 15 },
+        { name = 'nvim_lsp', keyword_length = 1, max_item_count = 50 },
         { name = 'luasnip',  keyword_length = 2, max_item_count = 3 },
         { name = 'path',     max_item_count = 2 },
-        { name = 'buffer',   keyword_length = 4, max_item_count = 2 },
+        { name = 'buffer',   keyword_length = 4, max_item_count = 3 },
     },
     sorting = {
         comparators = {
@@ -143,6 +143,8 @@ cmp.setup({
     }),
     formatting = {
         format = function(entry, vim_item)
+            vim.o.pumheight = 15
+
             vim_item.abbr = string.sub(vim_item.abbr, 1, 30)
             -- Kind icons
             vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
@@ -152,10 +154,7 @@ cmp.setup({
             return vim_item
         end
     },
+    experimental = { ghost_text = true },
 })
 
 lsp.setup()
-
-cmp.setup({
-    experimental = { ghost_text = true },
-})
