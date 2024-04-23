@@ -257,6 +257,8 @@
     extraLuaConfig = ''
       ${builtins.readFile ./nvim/set.lua}
       ${builtins.readFile ./nvim/remap.lua}
+      ${builtins.readFile ./nvim/globals.lua}
+      vim.opt.rtp:append('/home/chris/code/neovim-plugins/stackmap.nvim')
     '';
   };
 
