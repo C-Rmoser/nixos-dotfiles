@@ -25,13 +25,13 @@ lsp.configure('lua_ls', {
 
 lsp.configure()
 
-require'lspconfig'.tsserver.setup {
+require 'lspconfig'.tsserver.setup {
     on_attach = function(client)
         client.resolved_capabilities.document_formatting = false
     end,
 }
 
-require'lspconfig'.svelte.setup{}
+require 'lspconfig'.svelte.setup {}
 
 lsp.configure('cssls', {
     filetypes = { 'css', 'scss', 'sass', 'less' }
@@ -59,37 +59,42 @@ lsp.on_attach(function(_, bufnr)
     vim.keymap.set('n', '<leader>rc', function()
         vim.lsp.buf.format { async = true }
     end, opts)
+
+    -- vim.keymap.set({"i", "s"}, "<C-n>", function() require('luasnip').jump( 1) end, {silent = true})
+    -- vim.keymap.set({"i", "s"}, "<C-p>", function() require('luasnip').jump(-1) end, {silent = true})
 end)
 
 local cmp = require('cmp')
 
 local kind_icons = {
-  Text = "",
-  Method = "󰆧",
-  Function = "󰊕",
-  Constructor = "",
-  Field = "󰇽",
-  Variable = "󰂡",
-  Class = "󰠱",
-  Interface = "",
-  Module = "",
-  Property = "󰜢",
-  Unit = "",
-  Value = "󰎠",
-  Enum = "",
-  Keyword = "󰌋",
-  Snippet = "",
-  Color = "󰏘",
-  File = "󰈙",
-  Reference = "",
-  Folder = "󰉋",
-  EnumMember = "",
-  Constant = "󰏿",
-  Struct = "",
-  Event = "",
-  Operator = "󰆕",
-  TypeParameter = "󰅲",
+    Text = "",
+    Method = "󰆧",
+    Function = "󰊕",
+    Constructor = "",
+    Field = "󰇽",
+    Variable = "󰂡",
+    Class = "󰠱",
+    Interface = "",
+    Module = "",
+    Property = "󰜢",
+    Unit = "",
+    Value = "󰎠",
+    Enum = "",
+    Keyword = "󰌋",
+    Snippet = "",
+    Color = "󰏘",
+    File = "󰈙",
+    Reference = "",
+    Folder = "󰉋",
+    EnumMember = "",
+    Constant = "󰏿",
+    Struct = "",
+    Event = "",
+    Operator = "󰆕",
+    TypeParameter = "󰅲",
 }
+
+local luasnip = require('luasnip')
 
 cmp.setup({
     sources = {
@@ -105,10 +110,36 @@ cmp.setup({
         }
     },
     mapping = lsp.defaults.cmp_mappings({
-        ['<Tab>'] = cmp.mapping.confirm({ select = true }),
-        ["<C-k>"] = cmp.mapping(cmp.mapping.complete({
-            reason = cmp.ContextReason.Manual,
-        }), { "i", "c" }),
+
+        ['<tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                if luasnip.expandable() then
+                    luasnip.expand()
+                else
+                    cmp.confirm({
+                        select = true,
+                    })
+                end
+            else
+                fallback()
+            end
+        end),
+
+        ["<c-a>"] = cmp.mapping(function(fallback)
+            if luasnip.locally_jumpable(1) then
+                luasnip.jump(1)
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
+
+        ["<c-x>"] = cmp.mapping(function(fallback)
+            if luasnip.locally_jumpable(-1) then
+                luasnip.jump(-1)
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
     }),
     formatting = {
         format = function(entry, vim_item)
