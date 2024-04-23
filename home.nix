@@ -418,7 +418,7 @@
             "custom/power" = {
                 format = "⏻";
                 tooltip = false;
-                on-click = "wlogout --protocol layer-shell";
+                on-click = "sleep 0.1 && wlogout --protocol layer-shell";
             };
 
             "hyprland/workspaces" = {
