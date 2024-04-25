@@ -74,8 +74,4 @@ vim.keymap.set("v", "s", "d")
 vim.keymap.set("n", "ss", "dd")
 vim.keymap.set("n", "S", "D")
 
-vim.keymap.set("n", "<leader><leader>x",
-function()
-    vim.cmd("silent :w")
-    vim.cmd(":source %")
-end, {noremap = true})
+vim.keymap.set("n", "<leader><leader>x", "<cmd>silent :w<CR><BAR><cmd>source %<CR>")
