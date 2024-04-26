@@ -1,5 +1,5 @@
 require('neodev').setup({
-    override = function(root_dir, library)
+    override = function(_, library)
         library.enabled = true
         library.plugins = true
     end,
@@ -19,7 +19,6 @@ lsp.configure('rust_analyzer');
 
 lsp.configure('nixd');
 
--- Fix Undefined global 'vim'
 lsp.configure('lua_ls', {
     settings = {
         Lua = {
