@@ -1,3 +1,10 @@
+require('neodev').setup({
+    override = function(root_dir, library)
+        library.enabled = true
+        library.plugins = true
+    end,
+})
+
 local lsp = require('lsp-zero').preset({
     name = 'minimal',
     set_lsp_keymaps = false,
@@ -17,7 +24,7 @@ lsp.configure('lua_ls', {
     settings = {
         Lua = {
             diagnostics = {
-                globals = { 'vim', 'P' }
+                globals = { 'P' }
             }
         }
     }

@@ -74,4 +74,5 @@ vim.keymap.set("v", "s", "d")
 vim.keymap.set("n", "ss", "dd")
 vim.keymap.set("n", "S", "D")
 
+vim.keymap.set("n", "<leader>t", "<Plug>PlenaryTestFile")
 vim.keymap.set("n", "<leader><leader>x", "<cmd>silent :w<CR><BAR><cmd>source %<CR>")

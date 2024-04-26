@@ -253,6 +253,7 @@
       config = builtins.readFile(./nvim/plugin/_treesitter.lua);
     }
       plenary-nvim
+      neodev-nvim
     ];
     extraLuaConfig = ''
       ${builtins.readFile ./nvim/set.lua}
